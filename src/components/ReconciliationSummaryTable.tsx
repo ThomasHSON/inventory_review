@@ -633,12 +633,12 @@ const ReconciliationSummaryTable: React.FC<ReconciliationSummaryTableProps> = ({
                       {columnSettings.NAME && <td className="px-4 py-3 text-sm text-gray-900 whitespace-nowrap">{item.NAME}</td>}
                       {columnSettings.ALIAS && <td className="px-4 py-3 text-sm text-gray-600">{item.ALIAS}</td>}
                       <td className="px-4 py-3 text-sm text-gray-600">{item.COMMENT === '覆盤' ? 'Y' : '-'}</td>
-                      {columnSettings.QTY && <td className="px-4 py-3 text-sm text-gray-900">{item.QTY.toLocaleString()}</td>}
+                      {columnSettings.STOCK && <td className="px-4 py-3 text-sm text-gray-900">{item.QTY.toLocaleString()}</td>}
                       {columnSettings.COUNT && <td className="px-4 py-3 text-sm text-gray-900">{item.COUNT.toLocaleString()}</td>}
                       {columnSettings.REVIEW && <td className="px-4 py-3 text-sm text-gray-900">{item.REVIEW.toLocaleString()}</td>}
                       {columnSettings.stockAmount && <td className="px-4 py-3 text-sm text-gray-900">{item.stockAmount.toLocaleString()}</td>}
                       {columnSettings.finalBalance && <td className="px-4 py-3 text-sm text-gray-900">{item.finalBalance.toLocaleString()}</td>}
-                      {columnSettings.consumption && <td className="px-4 py-3 text-sm text-gray-900">{item.consumption.toLocaleString()}</td>}
+                      {columnSettings.QTY && <td className="px-4 py-3 text-sm text-gray-900">{item.consumption.toLocaleString()}</td>}
                       {columnSettings.PRICE && <td className="px-4 py-3 text-sm text-gray-900">{item.PRICE.toLocaleString()}</td>}
                       {columnSettings.ERROR && <td className={`px-4 py-3 text-sm font-medium ${item.ERROR < 0 ? 'text-red-600' : 'text-green-600'}`}>
                         {item.ERROR.toLocaleString()}
