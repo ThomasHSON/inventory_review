@@ -638,7 +638,7 @@ const ReconciliationSummaryTable: React.FC<ReconciliationSummaryTableProps> = ({
                       {columnSettings.REVIEW && <td className="px-4 py-3 text-sm text-gray-900">{item.REVIEW.toLocaleString()}</td>}
                       {columnSettings.stockAmount && <td className="px-4 py-3 text-sm text-gray-900">{item.stockAmount.toLocaleString()}</td>}
                       {columnSettings.finalBalance && <td className="px-4 py-3 text-sm text-gray-900">{item.finalBalance.toLocaleString()}</td>}
-                      {columnSettings.QTY && <td className="px-4 py-3 text-sm text-gray-900">{item.consumption != null ? item.consumption.toLocaleString() : ''}</td>}
+                      {columnSettings.QTY && <td className="px-4 py-3 text-sm text-gray-900">{item.consumption != null ? item.consumption.toLocaleString() : '0'}</td>}
                       {columnSettings.PRICE && <td className="px-4 py-3 text-sm text-gray-900">{item.PRICE.toLocaleString()}</td>}
                       {columnSettings.ERROR && <td className={`px-4 py-3 text-sm font-medium ${item.ERROR < 0 ? 'text-red-600' : 'text-green-600'}`}>
                         {item.ERROR.toLocaleString()}
