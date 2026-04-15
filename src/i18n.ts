@@ -1,0 +1,307 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+const resources = {
+  en: {
+    translation: {
+      inventoryMerge: 'Inventory Review',
+      company: 'Hongsen Technology',
+      loading: 'Loading',
+      tabs: {
+        manage: 'Management',
+        merge: 'Merge',
+        review: 'Review',
+        report: 'Report',
+        daliy: 'Daily Inventory',
+        final: 'Final',
+      },
+      copyright: 'Copyright ©2025 鴻森智能科技',
+      logout: 'Logout',
+      login: 'Login',
+      userId: 'ID',
+      password: 'Password',
+      loginError: 'Login failed. Please try again.',
+      login_id: 'Enter account',
+      login_password: 'Enter password',
+      welcomeMessage: 'Welcome to Inventory Management System',
+      pageDescription: 'Your clean template is ready for new features',
+      buildYourFeature: 'This is your clean workspace. Start building your new feature here!',
+      
+      // Reconciliation feature translations
+      timeType: 'Time Type',
+      ctTime: 'Create Time',
+      searchConditions: 'Search Conditions',
+      timeRange: 'Time Range',
+      startTime: 'Start Time',
+      endTime: 'End Time',
+      expand: 'Expand',
+      collapse: 'Collapse',
+      mergedRecord: 'Merged Record',
+      selectMergedRecord: 'Select Merged Record',
+      selectRecord: 'Please select a record',
+      selectedRecord: 'Selected Record',
+      
+      inventorySettings: 'Inventory Settings',
+      unitPriceSettings: 'Unit Price Settings',
+      usageQtySettings: 'Usage Quantity Settings',
+      aliasSettings: 'Alias Settings',
+      reconciliationSettings: 'Reconciliation Suggestion Settings',
+      columnDisplaySettings: 'Column Display Settings',
+      generateSummary: 'Generate Summary',
+      regenerateSummary: 'Regenerate Summary',
+      downloadReport: 'Export',
+      enterReview: 'Enter Review',
+      generateReconciliation: 'Generate Reconciliation',
+      generateReviewSheet: 'Generate Review Sheet',
+      enterReviewSheet: 'Enter Review Sheet',
+      lockedReviewSheet: 'Locked Review Sheet',
+      
+      // Create Reconciliation Modal
+      createReconciliationRecord: 'Create Reconciliation Record',
+      reconciliationRecordName: 'Reconciliation Record Name',
+      enterReconciliationNamePlaceholder: 'Please enter reconciliation record name',
+      create: 'Create',
+      creating: 'Creating...',
+      pleaseEnterReconciliationName: 'Please enter a reconciliation record name',
+      reconciliationRecordCreatedSuccessfully: 'Reconciliation record created successfully!',
+      failedToCreateReconciliationRecord: 'Failed to create reconciliation record. Please try again.',
+      
+      reconciliationSummary: 'Reconciliation Summary',
+      totalItems: 'entries',
+      noSummaryData: 'No summary data available',
+      generateSummaryFirst: 'Please generate summary first',
+      searchPlaceholder: 'Search drug code or name...',
+      noSearchResults: 'No data found matching search criteria',
+      noData: 'No data',
+      noReviewRecordsFound: 'No review records found',
+      
+      // Table header translations
+      index: 'Index',
+      drugCode: 'Drug Code',
+      productCode: 'Product Code',
+      drugName: 'Drug Name',
+      alias: 'Alias',
+      unitPrice: 'Unit Price',
+      stockQty: 'Stock Qty',
+      countQty: 'Count Qty',
+      reviewQty: 'Review Qty',
+      stockAmount: 'Stock Amount',
+      finalBalance: 'Final Balance',
+      usageQty: 'Usage Qty',
+      errorQty: 'Error Qty',
+      errorAmount: 'Error Amount',
+      errorPercentage: 'Error %',
+      reviewStatus: 'Review',
+      notes: 'Notes',
+      
+      importExcel: 'Import',
+      exportExcel: 'Export',
+      note: 'Note',
+      save: 'Save',
+      saving: 'Saving...',
+      
+      // Pagination translations
+      showing: 'Showing',
+      of: 'of',
+      records: 'records',
+      previous: 'Previous',
+      next: 'Next',
+      
+      // Column visibility translations
+      columnVisibility: 'Column Visibility',
+      selectColumns: 'Select columns to display',
+      minimumColumnsRequired: 'At least 10 columns must be enabled',
+      resetToDefault: 'Reset to Default',
+      
+      abnormalCountDefinition: 'Abnormal Count Definition',
+      abnormalSettings: 'Abnormal Settings',
+      errorAmountRange: 'Error Amount Range',
+      errorPercentageRange: 'Error Percentage Range',
+      errorQuantityRange: 'Error Quantity Range',
+      calculation: 'Calculation',
+      minValue: 'Min Value',
+      maxValue: 'Max Value',
+      cancel: 'Cancel',
+      
+      // Lock Inventory Orders translations
+      lockInventoryOrders: 'Lock Inventory Orders',
+      noUnlockedInventoryOrders: 'No Unlocked Inventory Orders',
+      allOrdersAlreadyLocked: 'All inventory orders are already locked',
+      lockInventoryOrdersWarning: 'Lock Required Before Reconciliation',
+      lockInventoryOrdersDescription: 'The following inventory orders must be locked before generating the reconciliation record. This action cannot be undone.',
+      inventoryOrderNumber: 'Order Number',
+      inventoryOrderName: 'Order Name',
+      currentState: 'Current State',
+      ordersToLock: 'orders to lock',
+      lockOrders: 'Lock Orders',
+      locking: 'Locking...',
+      inventoryOrdersLockedSuccessfully: 'Inventory orders locked successfully!',
+      lockStatus: 'Lock Status',
+      locked: 'Locked',
+      unlocked: 'Open',
+      lockAction: 'Lock',
+      unlockAction: 'Unlock',
+      unlocking: 'Unlocking...'
+    }
+  },
+  zh: {
+    translation: {
+      inventoryMerge: '覆盤管理',
+      company: '鴻森智能科技',
+      loading: '載入中',
+      tabs: {
+        manage: '管理',
+        merge: '合併',
+        review: '覆盤',
+        report: '報表',
+        final: '定盤',
+        daily: '每日盤點報表',
+      },
+      copyright: 'Copyright ©2025 鴻森智能科技',
+      logout: '登出',
+      login: '登入',
+      userId: '帳號',
+      password: '密碼',
+      loginError: '登入失敗，請重試。',
+      login_id: '請輸入帳號',
+      login_password: '請輸入密碼',
+      welcomeMessage: '歡迎使用庫存管理系統',
+      pageDescription: '您的乾淨模板已準備好用於新功能',
+      buildYourFeature: '這是您的乾淨工作區。在此開始建立您的新功能！',
+      
+      // Reconciliation feature translations
+      timeType: '時間類型',
+      ctTime: '建立時間',
+      searchConditions: '搜尋條件',
+      timeRange: '時間區間',
+      startTime: '開始時間',
+      endTime: '結束時間',
+      expand: '展開',
+      collapse: '收合',
+      mergedRecord: '合併單據',
+      selectMergedRecord: '選擇合併單據',
+      selectRecord: '請選擇單據',
+      selectedRecord: '合併單單號',
+      
+      inventorySettings: '庫存設定',
+      unitPriceSettings: '單價設定',
+      usageQtySettings: '消耗量設定',
+      aliasSettings: '別名設定',
+      reconciliationSettings: '覆盤建議設定',
+      columnDisplaySettings: '欄位顯示設定',
+      generateSummary: '生成總表',
+      regenerateSummary: '重新生成總表',
+      downloadReport: '匯出',
+      enterReview: '進入覆盤',
+      generateReconciliation: '生成覆盤單',
+      generateReviewSheet: '生成覆盤單',
+      enterReviewSheet: '進入覆盤單',
+      lockedReviewSheet: '覆盤單已鎖定',
+      
+      // Create Reconciliation Modal
+      createReconciliationRecord: '新增覆盤單',
+      reconciliationRecordName: '覆盤單名稱',
+      enterReconciliationNamePlaceholder: '請輸入覆盤單名稱',
+      create: '建立',
+      creating: '建立中...',
+      pleaseEnterReconciliationName: '請輸入覆盤單名稱',
+      reconciliationRecordCreatedSuccessfully: '覆盤單建立成功！',
+      failedToCreateReconciliationRecord: '建立覆盤單失敗，請重試。',
+      
+      reconciliationSummary: '覆盤彙總表',
+      totalItems: '筆',
+      noSummaryData: '無彙總資料',
+      generateSummaryFirst: '請先產生彙總表',
+      searchPlaceholder: '搜尋藥碼或藥名...',
+      noSearchResults: '沒有找到符合搜尋條件的資料',
+      noData: '無資料',
+      noReviewRecordsFound: '沒有找到覆盤記錄',
+      
+      // Table header translations
+      index: '項次',
+      drugCode: '藥碼',
+      productCode: '料號',
+      drugName: '藥名',
+      alias: '別名',
+      unitPrice: '單價',
+      stockQty: '庫存量',
+      countQty: '盤點量',
+      reviewQty: '覆盤量',
+      stockAmount: '庫存金額',
+      finalBalance: '結存金額',
+      usageQty: '消耗量',
+      errorQty: '誤差量',
+      errorAmount: '誤差金額',
+      errorPercentage: '誤差百分率',
+      reviewStatus: '覆盤',
+      notes: '備註',
+      
+      importExcel: '匯入',
+      exportExcel: '匯出',
+      note: '備註',
+      save: '儲存',
+      saving: '儲存中...',
+      
+      // Pagination translations
+      showing: '顯示',
+      of: '共',
+      records: '筆記錄',
+      previous: '上一頁',
+      next: '下一頁',
+      
+      // Column visibility translations
+      columnVisibility: '欄位顯示',
+      selectColumns: '選擇要顯示的欄位',
+      minimumColumnsRequired: '至少需要啟用10個欄位',
+      resetToDefault: '重設為預設值',
+      
+      abnormalCountDefinition: '異常盤點定義',
+      abnormalSettings: '異常設定',
+      errorAmountRange: '誤差金額範圍',
+      errorPercentageRange: '誤差百分比範圍',
+      errorQuantityRange: '誤差數量範圍',
+      calculation: '計算',
+      minValue: '最小值',
+      maxValue: '最大值',
+      cancel: '取消',
+      
+      // Lock Inventory Orders translations
+      lockInventoryOrders: '鎖定盤點單',
+      noUnlockedInventoryOrders: '無未鎖定的盤點單',
+      allOrdersAlreadyLocked: '所有盤點單都已鎖定',
+      lockInventoryOrdersWarning: '生成覆盤單前需要鎖定包含的盤點單',
+      lockInventoryOrdersDescription: '',
+      inventoryOrderNumber: '盤點單號',
+      inventoryOrderName: '盤點單名稱',
+      currentState: '狀態',
+      ordersToLock: '筆單據待鎖定',
+      lockOrders: '鎖定單據',
+      locking: '鎖定中...',
+      inventoryOrdersLockedSuccessfully: '盤點單鎖定成功！',
+      lockStatus: '鎖定狀態',
+      locked: '鎖定',
+      unlocked: '開放中',
+      lockAction: '鎖定',
+      unlockAction: '解鎖',
+      unlocking: '解鎖中...',
+      adjustReviewItems: '調整覆盤項目',
+      saveReviewItems: '儲存覆盤項目',
+      reviewItemsUpdatedSuccessfully: '覆盤項目更新成功！',
+      failedToUpdateReviewItems: '更新覆盤項目失敗，請重試。'
+    }
+  }
+};
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: 'zh',
+    interpolation: {
+      escapeValue: false
+    }
+  });
+
+export default i18n;
