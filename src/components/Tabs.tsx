@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ApiService } from '../services/api';
 
 const Tabs = () => {
   const { t } = useTranslation();
+  const [showDailyReport, setShowDailyReport] = useState(false);
+
+  useEffect(() => {
+    ApiService.isDailyReportEnabled().then(setShowDailyReport);
+  }, []);
 
   return (
     <div className="h-[40px] mb-2">
@@ -17,9 +23,11 @@ const Tabs = () => {
           <a href="#" className="px-4 py-2 text-base font-medium border-b-2 border-blue-500 text-blue-600">
             {t('tabs.review')}
           </a>
-          <a href="../inventory_daily_report" className="px-4 py-2 text-base font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
-            {t('tabs.daily')}
-          </a>
+          {showDailyReport && (
+            <a href="../inventory_daily_report" className="px-4 py-2 text-base font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+              {t('tabs.daily')}
+            </a>
+          )}
         </div>
       </div>
     </div>

@@ -49,6 +49,9 @@ export const API_ENDPOINTS = {
   UPDATE_SETTINGS_BY_SN: '/api/inv_combinelist/update_setting_by_SN',
   UPDATE_REPORT: '/api/inv_combinelist/update_report',
   
+  // Setting page endpoints
+  GET_BY_PAGE_NAME: '/api/settingPage/get_by_page_name',
+
   // Legacy endpoints (keeping for backward compatibility)
   SAVE_RECONCILIATION_SETTINGS: '/api/reconciliation/save_settings',
   GET_RECONCILIATION_SETTINGS: '/api/reconciliation/get_settings'

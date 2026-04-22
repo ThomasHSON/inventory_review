@@ -704,6 +704,24 @@ export class ApiService {
     return response;
   }
 
+  // ===== SETTING PAGE API METHODS =====
+  static async getSettingByPageName(pageNames: string[]): Promise<ApiResponse<any[]>> {
+    return this.fetchApi<any[]>(API_ENDPOINTS.GET_BY_PAGE_NAME, 'POST', {
+      ValueAry: pageNames
+    });
+  }
+
+  static async isDailyReportEnabled(): Promise<boolean> {
+    try {
+      const response = await this.getSettingByPageName(['inventory']);
+      if (response.Code !== 200 || !response.Data) return false;
+      const setting = response.Data.find((item: any) => item.name === 'daily_report');
+      return setting?.value === 'True';
+    } catch {
+      return false;
+    }
+  }
+
   // ===== LEGACY METHODS (keeping for backward compatibility) =====
   static async getReconciliationSettings(): Promise<ReconciliationSettings> {
     // Simulate API delay
